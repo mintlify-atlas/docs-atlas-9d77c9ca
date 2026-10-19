@@ -1,7 +1,7 @@
 ---
-title: "Compare Two TfL Transport Types Side by Side"
+title: "Compare TfL Transport Types Side by Side in Snowflake"
 sidebarTitle: "Compare Types"
-description: "Use conditional aggregation in Snowflake SQL to pivot two TfL journey types into separate columns for year-by-year comparison."
+description: "Use conditional aggregation in Snowflake SQL to pivot two TfL transport types into columns for easy year-by-year comparison of journey volumes."
 ---
 
 When you want to compare two transport types year by year, the most readable approach is a pivot using conditional aggregation. Instead of returning one row per `(YEAR, JOURNEY_TYPE)` pair, you write a `CASE WHEN` expression for each mode inside a `SUM`, producing one row per year with each mode in its own column. This makes it easy to scan up and down the results and spot diverging trends without needing to mentally group alternate rows.

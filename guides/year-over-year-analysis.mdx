@@ -1,7 +1,7 @@
 ---
-title: "Calculate Year-Over-Year Journey Volume Change"
+title: "Calculate Year-Over-Year TfL Journey Volume Change"
 sidebarTitle: "YoY Analysis"
-description: "Use a Snowflake CTE and the LAG window function to compute year-over-year journey volume changes for any TfL transport type."
+description: "Use a Snowflake CTE and LAG window function to compute year-over-year journey volume changes for any TfL transport type from TFL.JOURNEYS."
 ---
 
 A simple annual total shows you how busy each year was, but it does not tell you whether ridership was rising or falling compared to the year before. To get that delta, combine a Common Table Expression (CTE) with the `LAG` window function. The CTE first collapses the monthly rows into a single annual total per year; the outer `SELECT` then uses `LAG` to look back at the previous year's total and subtract it, producing a `change_millions` column that is positive when ridership grew and negative when it fell.

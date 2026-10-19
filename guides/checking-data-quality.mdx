@@ -1,7 +1,7 @@
 ---
-title: "Check for Missing Journey Data in TFL.JOURNEYS"
+title: "Check for Null Journey Volumes in TFL.JOURNEYS Table"
 sidebarTitle: "Data Quality"
-description: "Identify null or missing journey volumes in the TFL.JOURNEYS Snowflake table using a simple GROUP BY query, with notes on why some transport types have expected nulls."
+description: "Learn how to identify null or missing journey volumes in the TFL.JOURNEYS table, and why TfL Rail and Emirates Airline have expected nulls in early years."
 ---
 
 Not every row in `TFL.JOURNEYS` contains a journey volume. Some transport types did not exist for the full date range covered by the dataset — they entered service partway through, leaving `JOURNEYS_MILLIONS` as `NULL` for the months before they launched. Before writing any aggregation query, it is worth knowing exactly which transport types are affected and how many null rows they carry.
