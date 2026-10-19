@@ -1,0 +1,72 @@
+{
+  "projectType": "data-platform",
+  "projectName": "TfL Journeys Analysis",
+  "projectDescription": "A SQL-based analysis project using Snowflake to explore Transport for London journey volumes across six transport types from 2010 onward.",
+  "theme": "luma",
+  "primaryColor": "#363d43",
+  "lightColor": "#143c5c",
+  "darkColor": null,
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": ["introduction", "quickstart"]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/checking-data-quality",
+              "guides/comparing-transport-types",
+              "guides/year-over-year-analysis",
+              "guides/seasonal-patterns",
+              "guides/loading-csv-data"
+            ]
+          },
+          {
+            "group": "Explanation",
+            "pages": [
+              "explanation/data-model-design",
+              "explanation/key-findings",
+              "explanation/pandemic-impact",
+              "explanation/emirates-airline"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Reference",
+        "groups": [
+          {
+            "group": "Data Reference",
+            "pages": [
+              "reference/table-schema",
+              "reference/journey-types",
+              "reference/query-catalogue",
+              "reference/csv-source",
+              "reference/naming-conventions"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Analysis of TfL journey volumes across six transport types (Bus, Underground & DLR, Overground, TfL Rail, Tram, Emirates Airline)",
+    "Monthly data from 2010 onward sourced from the Mayor of London's open data portal",
+    "Three core SQL queries answering specific business questions about journey volume trends",
+    "Snowflake-based single denormalised table design optimised for exploratory analysis",
+    "Reproducible end-to-end tutorial with expected results for each query",
+    "Recipes for common analysis tasks: null checks, pivots, YoY calculations, and seasonal slicing",
+    "Python/pandas helper for loading the raw CSV with explicit column typing"
+  ],
+  "publicApiSurface": [
+    "TFL.JOURNEYS table (columns: MONTH, YEAR, DAYS, REPORT_DATE, JOURNEY_TYPE, JOURNEYS_MILLIONS)",
+    "Query: most_popular_transport_types — total journeys by transport type, all-time",
+    "Query: emirates_airline_popularity — top 5 months by cable car volume",
+    "Query: least_popular_years_tube — bottom 5 years by Underground & DLR volume",
+    "tfl_journeys_final.csv — raw source extract (935 rows, 6 columns)"
+  ]
+}
